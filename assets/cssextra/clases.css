@@ -23,7 +23,6 @@
         .masonry-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            grid-auto-flow: 10px;
             gap: 1rem;
         }
         .card img {
@@ -33,8 +32,8 @@
             border-radius: 8px;
         }
         .card-fuerza {
-            grid-row: span 50; 
-            grid-column: span 2; /* Ancho personalizado */
+            grid-row: span 20; 
+            grid-column: span 2; 
         }
         
         .card-funcional {
