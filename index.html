@@ -13,39 +13,25 @@
 <!-- Acá arrancamos con el menú que va arriba de la página. -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-    <!-- Este bloque es el corazón del menú: el logo y los enlaces. -->
-    <div class="container">
-        <!-- El "container" es como una caja que mantiene todo centrado y ordenado. -->
+    <div class="container">>
         <a class="navbar-brand" href="index.html">
             <img src="./assets/fotos/index/logo.png" alt="Logo de Iron Claw" class="img-fluid me-2" style="height: 40px;">
             IRON CLAW
         </a>
-
-        <!-- Este es el nombre del gym, el que todos ven primero. El "navbar-brand" le da un estilo destacado, como si fuera el título principal. -->
-        <!-- Botón para móviles -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
-        <!-- Menú principal -->
+  <!-- Menú principal -->
         <div class="collapse navbar-collapse" id="navbarNav">
-            <!-- todos los enlaces del menú. El "collapse" hace que se esconda en móviles hasta que toques el botón. El id="navbarNav" es como el nombre de esta sección para que el botón de arriba sepa qué mostrar. -->
             <ul class="navbar-nav ms-auto">
-                <!-- La lista de enlaces. El "navbar-nav" los pone uno al lado del otro, y "ms-auto" los empuja a la derecha -->
-                <!-- Enlace a Inicio -->
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
                 </li>
-                <!-- Cada <li> es un enlace. Este es el de "Inicio". El "active" lo resalta para que sepas que estás en la página principal. El href="index.html" te lleva a la home. Si estás en otra página, sacale el "active". -->
-
-                <!-- Menú de Clases (mega menú) -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="clases.html" id="clasesMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">Clases</a>
-                    <!-- Este es el enlace de "Clases". El "dropdown-toggle" dice que, al hacer clic (o pasar el mouse con jQuery), va a mostrar un submenú. El id="clasesMenu" es solo un nombre para identificarlo. -->
+                    <a class="nav-link dropdown-toggle" href="#" id="clasesMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">Clases</a>
                     <div class="dropdown-menu mega-menu p-3">
-                        <!-- El "dropdown-menu" es el cuadro que aparece con más opciones, y "mega-menu" es una clase que le pusimos para hacerlo más grande. El "p-3" agrega un poco de espacio adentro para que no se vea apretado. -->
+                        <a class="dropdown-item" href="clases.html"><strong>Todas las Clases</strong></a>
                         <div class="row">
-                            <!-- grilla ("row") para dividir el menú en columnas, como si fuera una tabla -->
                             <div class="col">
                                 <h5>Fuerza</h5>
                                 <a class="dropdown-item" href="./clases/musculacion.html">Musculación</a>
@@ -61,7 +47,6 @@
                                 <a class="dropdown-item" href="./clases/yoga.html">Yoga</a>
                                 <a class="dropdown-item" href="./clases/pilates.html">Pilates</a>
                             </div>
-                            <!-- Cada "col" es una columna con un título (h5) y enlaces. Los "dropdown-item" son los links que podés clicar.-->
                         </div>
                     </div>
                 </li>
@@ -79,12 +64,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="blog.html">Blog</a>
                 </li>
-                <!-- Estos son los enlaces a las otras páginas. Cada uno es un <li> con un <a>. Los href apuntan a los archivos HTML de tu proyecto. Si querés agregar otra página, como "Sobre Nosotros", solo copiás un <li> y cambiás el nombre y el href. -->
-            </ul>
+                </ul>
+            </div>
         </div>
-    </div>
 </nav>
-
 
     <!-- Hero con video -->
     <section class="hero position-relative text-white text-center d-flex align-items-center">
