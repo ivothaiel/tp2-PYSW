@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Boldonse&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Tektur:wght@400..900&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
+        *{
+            font-family: 'Bebas Neue', cursive;
+        }
+        body {
+            background-color: #dd7272;
+            
+        }
+        .mega-menu { width: 500px; }
+        
+        /* Botón toggle */
+        .theme-toggle {
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        /* Filtros */
+        .form-check-input:checked {
+            background-color: #ff6200;
+            border-color: #ff6200;
+        }
+    
+        /* Galería Masonry */
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-auto-flow: 10px;
+            gap: 1rem;
+        }
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .card-fuerza {
+            grid-row: span 50; 
+            grid-column: span 2; /* Ancho personalizado */
+        }
+        
+        .card-funcional {
+            grid-row: span 20;
+            grid-column: span 1;
+        }
+        
+        .card-bienestar {
+            grid-row: span 10;
+            grid-column: span 2;
+        }
+       
+        .card-img-overlay {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .card:hover .card-img-top {
+            transform: scale(1.1);
+        }
+        .card:hover .card-img-overlay {
+            opacity: 1;
+        }
+        /* Tabla */
+        .table th, .table td {
+            vertical-align: middle;
+        }

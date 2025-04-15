@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iron Claw - Clases</title>
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/cssextra/clases.css">
+    <link rel="icon" href="./assets/fotos/index/pesa.png" type="image/png">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <div class="container">>
+            <a class="navbar-brand" href="index.html">
+                <img src="./assets/fotos/index/logo.png" alt="Logo de Iron Claw" class="img-fluid me-2" style="height: 40px;">
+                IRON CLAW
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+      <!-- Menú principal -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="clasesMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">Clases</a>
+                        <div class="dropdown-menu mega-menu p-3">
+                            <div class="row">
+                                <div class="col">
+                                    <h5>Fuerza</h5>
+                                    <a class="dropdown-item" href="./clases/musculacion.html">Musculación</a>
+                                    <a class="dropdown-item" href="./clases/powerlifting.html">Powerlifting</a>
+                                </div>
+                                <div class="col">
+                                    <h5>Funcional</h5>
+                                    <a class="dropdown-item" href="./clases/crossfit.html">CrossFit</a>
+                                    <a class="dropdown-item" href="./clases/calistenia.html">Calistenia</a>
+                                </div>
+                                <div class="col">
+                                    <h5>Bienestar</h5>
+                                    <a class="dropdown-item" href="./clases/yoga.html">Yoga</a>
+                                    <a class="dropdown-item" href="./clases/pilates.html">Pilates</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+    
+                    <!-- Otros enlaces -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="entrenadores.html">Entrenadores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="precios.html">Planes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+    </nav>
+  
+    <!-- Sección de Clases -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Nuestras Clases</h2>
+
+            <!-- Filtros -->
+            <div class="mb-4 text-center">
+                <div class="form-check form-check-inline m-2">
+                    <input class="form-check-input" type="checkbox" id="fuerza" value="fuerza" checked>
+                    <label class="form-check-label" for="fuerza">Fuerza</label>
+                </div>
+                <div class="form-check form-check-inline m-2">
+                    <input class="form-check-input" type="checkbox" id="funcional" value="funcional" checked>
+                    <label class="form-check-label" for="funcional">Funcional</label>
+                </div>
+                <div class="form-check form-check-inline m-2">
+                    <input class="form-check-input" type="checkbox" id="bienestar" value="bienestar" checked>
+                    <label class="form-check-label" for="bienestar">Bienestar</label>
+                </div>
+            </div>
+
+            <!-- Galería Masonry -->
+            <div class="masonry-grid mb-5">
+                <!-- Musculación -->
+                <div class="card fuerza">
+                    <img src="./assets/fotos/clases/clases/musculacion3.jpg" class="card-img-top" alt="Musculación">
+                    <div class="card-img-overlay d-none">
+                        <h5 class="card-title">Musculación</h5>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Musculación</h5>
+                        <p class="card-text">Entrenamiento con pesas para ganar fuerza.</p>
+                    </div>
+                </div>
+                <!-- Powerlifting -->
+                <div class="card fuerza">
+                    <img src="./assets/fotos/index/powerlifting.jpg" class="card-img-top" alt="Powerlifting">
+                    <div class="card-img-overlay d-none">
+                        <h5 class="card-title">Powerlifting</h5>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Powerlifting</h5>
+                        <p class="card-text">Levanta cargas máximas con técnica.</p>
+                    </div>
+                </div>
+                <!-- CrossFit -->
+                <div class="card funcional">
+                    <img src="./assets/fotos/clases/clases/crossfitDEF.jpg" class="card-img-top" alt="CrossFit">
+                    <div class="card-img-overlay d-none">
+                        <h5 class="card-title">CrossFit</h5>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">CrossFit</h5>
+                        <p class="card-text">Alta intensidad y variedad funcional.</p>
+                    </div>
+                </div>
+                <!-- Calistenia -->
+                <div class="card funcional">
+                    <img src="./assets/fotos/index/calistenia.jpg" class="card-img-top alt="Calistenia">
+                    <div class="card-img-overlay d-none">
+                        <h5 class="card-title">Calistenia</h5>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Calistenia</h5>
+                        <p class="card-text">Fuerza con tu propio cuerpo.</p>
+                    </div>
+                </div>
+                <!-- Yoga -->
+                <div class="card bienestar">
+                    <img src="./assets/fotos/index/yoga.jpg" class="card-img-top" alt="Yoga">
+                    <div class="card-img-overlay d-none">
+                        <h5 class="card-title">Yoga</h5>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Yoga</h5>
+                        <p class="card-text">Equilibrio para cuerpo y mente.</p>
+                    </div>
+                </div>
+                <!-- Pilates -->
+                <div class="card bienestar">
+                    <img src="./assets/fotos/index/pilates.jpg" class="card-img-top" alt="Pilates">
+                    <div class="card-img-overlay d-none">
+                        <h5 class="card-title">Pilates</h5>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Pilates</h5>
+                        <p class="card-text">Fortalece tu core con precisión.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabla de horarios -->
+            <h3 class="text-center mb-4">Horarios</h3>
+            <div class="table-responsive-md">
+                <table class="table table-striped table-bordered table-hover">
+                    <thead class="bg-primary text-white">
+                        <tr>
+                            <th>Clase</th>
+                            <th>Lunes</th>
+                            <th>Martes</th>
+                            <th>Miércoles</th>
+                            <th>Jueves</th>
+                            <th>Viernes</th>
+                            <th>Sábado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Musculación</td>
+                            <td>08:00-10:00</td>
+                            <td>-</td>
+                            <td>08:00-10:00</td>
+                            <td>-</td>
+                            <td>08:00-10:00</td>
+                            <td>10:00-12:00</td>
+                        </tr>
+                        <tr>
+                            <td>Powerlifting</td>
+                            <td>-</td>
+                            <td>18:00-20:00</td>
+                            <td>-</td>
+                            <td>18:00-20:00</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>CrossFit</td>
+                            <td>17:00-18:00</td>
+                            <td>-</td>
+                            <td>17:00-18:00</td>
+                            <td>-</td>
+                            <td>17:00-18:00</td>
+                            <td>09:00-10:00</td>
+                        </tr>
+                        <tr>
+                            <td>Calistenia</td>
+                            <td>-</td>
+                            <td>16:00-17:00</td>
+                            <td>-</td>
+                            <td>16:00-17:00</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Yoga</td>
+                            <td>07:00-08:00</td>
+                            <td>-</td>
+                            <td>07:00-08:00</td>
+                            <td>-</td>
+                            <td>07:00-08:00</td>
+                            <td>08:00-09:00</td>
+                        </tr>
+                        <tr>
+                            <td>Pilates</td>
+                            <td>-</td>
+                            <td>09:00-10:00</td>
+                            <td>-</td>
+                            <td>09:00-10:00</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+
+  
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Newsletter</h3>
+                    <form id="newsletterForm">
+                        <input type="email" class="form-control mb-2" placeholder="Tu email" required>
+                        <button type="submit" class="btn btn-danger">Suscribirse</button>
+                        <span class="spinner-border spinner-border-sm d-none"></span>
+                    </form>
+                </div>
+                <div class="col-md-4 text-center">
+                    <h3>Redes</h3>
+                    <a href="#" class="text-white d-block">Facebook</a>
+                    <a href="#" class="text-white d-block">Instagram</a>
+                    <a href="#" class="text-white d-block">Twitter</a>
+                </div>
+                <div class="col-md-4">
+                    <h3>Mapa</h3>
+                    <iframe src="https://www.google.com/maps/embed?pb=..." style="width: 100%; height: 200px; border: 0;" allowfullscreen=""></iframe>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./node_modules/masonry-layout/dist/masonry.pkgd.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Mega menú
+            $('.dropdown').hover(function() {
+                $(this).find('.dropdown-menu').slideDown(200);
+            }, function() {
+                $(this).find('.dropdown-menu').slideUp(200);
+            });
+
+            $('input[type="checkbox"]').on('change', function () {
+            var categorias = [];
+            $('input[type="checkbox"]:checked').each(function () {
+            categorias.push($(this).val());
+            });
+
+            $('.card').each(function () {
+               var categoria = $(this).attr('class').split(' ').find(c => categorias.includes(c));
+               if (categoria) {
+               $(this).fadeIn();
+               } else {
+               $(this).fadeOut();
+            }
+            });
+            });
+            var $grid = $('.masonry-grid').masonry({
+    itemSelector: '.card',
+    columnWidth: '.card',
+    percentPosition: true
+});
+
+// Reorganizar Masonry al aplicar filtros
+$('input[type="checkbox"]').on('change', function () {
+    $grid.masonry('layout');
+});
+            // Zoom y overlay
+            $('.card').hover(
+                function() {
+                    $(this).find('.card-img-overlay').removeClass('d-none');
+                },
+                function() {
+                    $(this).find('.card-img-overlay').addClass('d-none');
+                }
+            );
+
+            // Formulario newsletter
+            $('#newsletterForm').on('submit', function(e) {
+                e.preventDefault();
+                if (this.checkValidity()) {
+                    $('.spinner-border').removeClass('d-none');
+                    setTimeout(function() {
+                        $('.spinner-border').addClass('d-none');
+                    }, 2000);
+                }
+                this.classList.add('was-validated');
+            });
+        });
+    </script>
+</body>
+</html>
