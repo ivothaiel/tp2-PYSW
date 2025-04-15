@@ -1,114 +1,487 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iron Claw - Entrenadores</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" href="./assets/fotos/index/pesa.png" type="image/png">
+    <!-- Estilo extra -->
+    <style>
+        body {
+            background-color: #ff6200;
+            
+        }
+        .mega-menu { width: 500px; }
+        /* Efecto flip para tarjetas */
+        .flip-card {
+            perspective: 1000px;
+            height: 400px;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .flip-card-back {
+            transform: rotateY(180deg);
+            background-color: #343a40;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+        }
+        /* Estrellas */
+        .star-rating label {
+            font-size: 1.5rem;
+            color: #ccc;
+            cursor: pointer;
+        }
+        .star-rating input:checked ~ label,
+        .star-rating label:hover,
+        .star-rating label:hover ~ label {
+            color: #ff6200;
+        }
+        .star-rating input {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <!-- Barra de navegación -->
-<!-- Acá arrancamos con el menú que va arriba de la página. -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-    <!-- Este bloque es el corazón del menú: el logo y los enlaces. -->
-    <div class="container">
-        <!-- El "container" es como una caja que mantiene todo centrado y ordenado. -->
-        <a class="navbar-brand" href="index.html">
-            <img src="./assets/fotos/index/logo.png" alt="Logo de Iron Claw" class="img-fluid me-2" style="height: 40px;">
-            IRON CLAW
-        </a>
-
-        <!-- Este es el nombre del gym, el que todos ven primero. El "navbar-brand" le da un estilo destacado, como si fuera el título principal. -->
-        <!-- Botón para móviles -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- Menú principal -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <!-- todos los enlaces del menú. El "collapse" hace que se esconda en móviles hasta que toques el botón. El id="navbarNav" es como el nombre de esta sección para que el botón de arriba sepa qué mostrar. -->
-            <ul class="navbar-nav ms-auto">
-                <!-- La lista de enlaces. El "navbar-nav" los pone uno al lado del otro, y "ms-auto" los empuja a la derecha -->
-                <!-- Enlace a Inicio -->
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
-                </li>
-                <!-- Cada <li> es un enlace. Este es el de "Inicio". El "active" lo resalta para que sepas que estás en la página principal. El href="index.html" te lleva a la home. Si estás en otra página, sacale el "active". -->
-
-                <!-- Menú de Clases (mega menú) -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="clasesMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">Clases</a>
-                    <!-- Este es el enlace de "Clases". El "dropdown-toggle" dice que, al hacer clic (o pasar el mouse con jQuery), va a mostrar un submenú. El id="clasesMenu" es solo un nombre para identificarlo. -->
-                    <div class="dropdown-menu mega-menu p-3">
-                        <!-- El "dropdown-menu" es el cuadro que aparece con más opciones, y "mega-menu" es una clase que le pusimos para hacerlo más grande. El "p-3" agrega un poco de espacio adentro para que no se vea apretado. -->
-                        <div class="row">
-                            <!-- grilla ("row") para dividir el menú en columnas, como si fuera una tabla -->
-                            <div class="col">
-                                <h5>Fuerza</h5>
-                                <a class="dropdown-item" href="./clases/musculacion.html">Musculación</a>
-                                <a class="dropdown-item" href="./clases/powerlifting.html">Powerlifting</a>
+        <!-- Este bloque es el corazón del menú: el logo y los enlaces. -->
+        <div class="container">
+            <!-- El "container" es como una caja que mantiene todo centrado y ordenado. -->
+            <a class="navbar-brand" href="index.html">
+                <img src="./assets/fotos/index/logo.png" alt="Logo de Iron Claw" class="img-fluid me-2" style="height: 40px;">
+                IRON CLAW
+            </a>
+    
+            <!-- Este es el nombre del gym, el que todos ven primero. El "navbar-brand" le da un estilo destacado, como si fuera el título principal. -->
+            <!-- Botón para móviles -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <!-- Menú principal -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- todos los enlaces del menú. El "collapse" hace que se esconda en móviles hasta que toques el botón. El id="navbarNav" es como el nombre de esta sección para que el botón de arriba sepa qué mostrar. -->
+                <ul class="navbar-nav ms-auto">
+                    <!-- La lista de enlaces. El "navbar-nav" los pone uno al lado del otro, y "ms-auto" los empuja a la derecha -->
+                    <!-- Enlace a Inicio -->
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                    </li>
+                    <!-- Cada <li> es un enlace. Este es el de "Inicio". El "active" lo resalta para que sepas que estás en la página principal. El href="index.html" te lleva a la home. Si estás en otra página, sacale el "active". -->
+    
+                    <!-- Menú de Clases (mega menú) -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="clasesMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">Clases</a>
+                        <!-- Este es el enlace de "Clases". El "dropdown-toggle" dice que, al hacer clic (o pasar el mouse con jQuery), va a mostrar un submenú. El id="clasesMenu" es solo un nombre para identificarlo. -->
+                        <div class="dropdown-menu mega-menu p-3">
+                            <!-- El "dropdown-menu" es el cuadro que aparece con más opciones, y "mega-menu" es una clase que le pusimos para hacerlo más grande. El "p-3" agrega un poco de espacio adentro para que no se vea apretado. -->
+                            <div class="row">
+                                <!-- grilla ("row") para dividir el menú en columnas, como si fuera una tabla -->
+                                <div class="col">
+                                    <h5>Fuerza</h5>
+                                    <a class="dropdown-item" href="./clases/musculacion.html">Musculación</a>
+                                    <a class="dropdown-item" href="./clases/powerlifting.html">Powerlifting</a>
+                                </div>
+                                <div class="col">
+                                    <h5>Funcional</h5>
+                                    <a class="dropdown-item" href="./clases/crossfit.html">CrossFit</a>
+                                    <a class="dropdown-item" href="./clases/calistenia.html">Calistenia</a>
+                                </div>
+                                <div class="col">
+                                    <h5>Bienestar</h5>
+                                    <a class="dropdown-item" href="./clases/yoga.html">Yoga</a>
+                                    <a class="dropdown-item" href="./clases/pilates.html">Pilates</a>
+                                </div>
+                                <!-- Cada "col" es una columna con un título (h5) y enlaces. Los "dropdown-item" son los links que podés clicar.-->
                             </div>
-                            <div class="col">
-                                <h5>Funcional</h5>
-                                <a class="dropdown-item" href="./clases/crossfit.html">CrossFit</a>
-                                <a class="dropdown-item" href="./clases/calistenia.html">Calistenia</a>
+                        </div>
+                    </li>
+    
+                    <!-- Otros enlaces -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="entrenadores.html">Entrenadores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="precios.html">Planes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <!-- Estos son los enlaces a las otras páginas. Cada uno es un <li> con un <a>. Los href apuntan a los archivos HTML de tu proyecto. Si querés agregar otra página, como "Sobre Nosotros", solo copiás un <li> y cambiás el nombre y el href. -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+
+    <!-- Sección de Entrenadores -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Nuestros Entrenadores</h2>
+            <div class="row">
+                <!-- Entrenador 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card">
+                                    <img src="./assets/fotos/entrenadores/musculacion.jpg" class="card-img-top" alt="Entrenador 1">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">Juan Pérez</h5>
+                                        <p class="card-text">Especialista en Fuerza</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col">
-                                <h5>Bienestar</h5>
-                                <a class="dropdown-item" href="./clases/yoga.html">Yoga</a>
-                                <a class="dropdown-item" href="./clases/pilates.html">Pilates</a>
+                            <div class="flip-card-back">
+                                <h5>Juan Pérez</h5>
+                                <p>10 años de experiencia en musculación y powerlifting.</p>
+                                <!-- Barras de habilidades -->
+                                <div class="mb-3">
+                                    <label>Fuerza</label>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 0%;" data-width="90"></div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label>Resistencia</label>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 0%;" data-width="70"></div>
+                                    </div>
+                                </div>
+                                <div class="star-rating d-flex justify-content-center">
+                                    <input type="radio" name="rating1" id="star2-5" value="5">
+                                    <label for="star2-5">★</label>
+                                    <input type="radio" name="rating2" id="star2-4" value="4">
+                                    <label for="star2-4">★</label>
+                                    <input type="radio" name="rating3" id="star2-3" value="3">
+                                    <label for="star2-3">★</label>
+                                    <input type="radio" name="rating4" id="star2-2" value="2">
+                                    <label for="star2-2">★</label>
+                                    <input type="radio" name="rating5" id="star2-1" value="1">
+                                    <label for="star2-1">★</label>
+                                </div>
                             </div>
-                            <!-- Cada "col" es una columna con un título (h5) y enlaces. Los "dropdown-item" son los links que podés clicar.-->
                         </div>
                     </div>
-                </li>
-
-                <!-- Otros enlaces -->
-                <li class="nav-item">
-                    <a class="nav-link" href="entrenadores.html">Entrenadores</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contacto.html">Contacto</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="precios.html">Planes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="blog.html">Blog</a>
-                </li>
-                <!-- Estos son los enlaces a las otras páginas. Cada uno es un <li> con un <a>. Los href apuntan a los archivos HTML de tu proyecto. Si querés agregar otra página, como "Sobre Nosotros", solo copiás un <li> y cambiás el nombre y el href. -->
-            </ul>
+                </div>
+                <!-- Entrenador 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card">
+                                    <img src="./assets/fotos/entrenadores/yoga.jpg" class="card-img-top" alt="Entrenador 2">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">María López</h5>
+                                        <p class="card-text">Especialista en Yoga</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h5>María López</h5>
+                                <p>Instructora certificada en yoga y mindfulness.</p>
+                                <div class="mb-3">
+                                    <label>Flexibilidad</label>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 0%;" data-width="85"></div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label>Enseñanza</label>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 0%;" data-width="95"></div>
+                                    </div>
+                                </div>
+                                <div class="star-rating d-flex justify-content-center">
+                                    <input type="radio" name="rating2" id="star2-5" value="5">
+                                    <label for="star2-5">★</label>
+                                    <input type="radio" name="rating2" id="star2-4" value="4">
+                                    <label for="star2-4">★</label>
+                                    <input type="radio" name="rating2" id="star2-3" value="3">
+                                    <label for="star2-3">★</label>
+                                    <input type="radio" name="rating2" id="star2-2" value="2">
+                                    <label for="star2-2">★</label>
+                                    <input type="radio" name="rating2" id="star2-1" value="1">
+                                    <label for="star2-1">★</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Entrenador 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card">
+                                    <img src="./assets/fotos/entrenadores/crossfit.jpg" class="card-img-top" alt="Entrenador 3">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">Carlos Gómez</h5>
+                                        <p class="card-text">Especialista en CrossFit</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h5>Carlos Gómez</h5>
+                                <p>Experto en entrenamientos funcionales intensos.</p>
+                                <div class="mb-3">
+                                    <label>Intensidad</label>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 0%;" data-width="80"></div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label>Motivación</label>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 0%;" data-width="90"></div>
+                                    </div>
+                                </div>
+                                <div class="star-rating d-flex justify-content-center">
+                                    <input type="radio" name="rating2" id="star2-5" value="5">
+                                    <label for="star2-5">★</label>
+                                    <input type="radio" name="rating2" id="star2-4" value="4">
+                                    <label for="star2-4">★</label>
+                                    <input type="radio" name="rating2" id="star2-3" value="3">
+                                    <label for="star2-3">★</label>
+                                    <input type="radio" name="rating2" id="star2-2" value="2">
+                                    <label for="star2-2">★</label>
+                                    <input type="radio" name="rating2" id="star2-1" value="1">
+                                    <label for="star2-1">★</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Entrenador 4 -->
+                <div class="col-md-4 mb-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card">
+                                    <img src="./assets/fotos/entrenadores/pilates-entrenador.jpg" class="card-img-top" alt="Entrenador 3">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">Maria Marchesi</h5>
+                                        <p class="card-text">Especialista en Pilates</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h5>Maria Marchesi</h5>
+                                <p>Experta en entrenamientos de fuerza y flexibilidad.</p>
+                                <div class="mb-3">
+                                    <label>Intensidad</label>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 0%;" data-width="80"></div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label>Agilidad</label>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 0%;" data-width="90"></div>
+                                    </div>
+                                </div>
+                                <div class="star-rating d-flex justify-content-center">
+                                    <input type="radio" name="rating2" id="star2-5" value="5">
+                                    <label for="star2-5">★</label>
+                                    <input type="radio" name="rating2" id="star2-4" value="4">
+                                    <label for="star2-4">★</label>
+                                    <input type="radio" name="rating2" id="star2-3" value="3">
+                                    <label for="star2-3">★</label>
+                                    <input type="radio" name="rating2" id="star2-2" value="2">
+                                    <label for="star2-2">★</label>
+                                    <input type="radio" name="rating2" id="star2-1" value="1">
+                                    <label for="star2-1">★</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Entrenador 5 - powerlifting, lo mismo que antes-->
+                <div class="col-md-4 mb-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card">
+                                    <img src="./assets/fotos/entrenadores/powerlifting.jpg" class="card-img-top" alt="Entrenador 4">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">Lucila Luján</h5>
+                                        <p class="card-text">Especialista en Powerlifting</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h5>Lucila Luján</h5>
+                                <p>Experta en entrenamientos de fuerza y resistencia.</p>
+                                <div class="mb-3">
+                                    <label>Intensidad</label>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 0%;" data-width="80"></div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label>Agilidad</label>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 0%;" data-width="90"></div>
+                                    </div>
+                                </div>
+                                <div class="star-rating d-flex justify-content-center">
+                                    <input type="radio" name="rating2" id="star2-5" value="5">
+                                    <label for="star2-5">★</label>
+                                    <input type="radio" name="rating2" id="star2-4" value="4">
+                                    <label for="star2-4">★</label>
+                                    <input type="radio" name="rating2" id="star2-3" value="3">
+                                    <label for="star2-3">★</label>
+                                    <input type="radio" name="rating2" id="star2-2" value="2">
+                                    <label for="star2-2">★</label>
+                                    <input type="radio" name="rating2" id="star2-1" value="1">
+                                    <label for="star2-1">★</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Entrenador 6 - calistenia-->
+                <div class="col-md-4 mb-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card">
+                                    <img src="./assets/fotos/entrenadores/calistenia.jpg" class="card-img-top" alt="Entrenador 6">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">Martina Gimenez</h5>
+                                        <p class="card-text">Especialista en Calistenia</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h5>Martina Gimenez</h5>
+                                <p>Experta en entrenamientos de fuerza y resistencia corporal.</p>
+                                <div class="mb-3">
+                                    <label>Intensidad</label>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 0%;" data-width="80"></div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label>Agilidad</label>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 0%;" data-width="90"></div>
+                                    </div>
+                                </div>
+                                <div class="star-rating d-flex justify-content-center">
+                                    <input type="radio" name="rating2" id="star2-5" value="5">
+                                    <label for="star2-5">★</label>
+                                    <input type="radio" name="rating2" id="star2-4" value="4">
+                                    <label for="star2-4">★</label>
+                                    <input type="radio" name="rating2" id="star2-3" value="3">
+                                    <label for="star2-3">★</label>
+                                    <input type="radio" name="rating2" id="star2-2" value="2">
+                                    <label for="star2-2">★</label>
+                                    <input type="radio" name="rating2" id="star2-1" value="1">
+                                    <label for="star2-1">★</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</nav>
+    </section>
 
- <!-- Footer -->
- <footer class="bg-dark text-white py-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <h3>Newsletter</h3>
-                <form id="newsletterForm">
-                    <input type="email" class="form-control mb-2" placeholder="Tu email" required>
-                    <button type="submit" class="btn btn-primary">Suscribirse</button>
-                    <span class="spinner-border spinner-border-sm d-none"></span>
-                </form>
-            </div>
-            <div class="col-md-4 text-center">
-                <h3>Redes</h3>
-                <a href="#" class="text-white d-block">Facebook</a>
-                <a href="#" class="text-white d-block">Instagram</a>
-            </div>
-            <div class="col-md-4">
-                <h3>Mapa</h3>
-                <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="200" style="border:0;" allowfullscreen=""></iframe>
+    <!-- Footer (mismo que index.html) -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Newsletter</h3>
+                    <form id="newsletterForm">
+                        <input type="email" class="form-control mb-2" placeholder="Tu email" required>
+                        <button type="submit" class="btn btn-primary">Suscribirse</button>
+                        <span class="spinner-border spinner-border-sm d-none"></span>
+                    </form>
+                </div>
+                <div class="col-md-4 text-center">
+                    <h3>Redes</h3>
+                    <a href="#" class="text-white d-block">Facebook</a>
+                    <a href="#" class="text-white d-block">Instagram</a>
+                </div>
+                <div class="col-md-4">
+                    <h3>Mapa</h3>
+                    <iframe src="https://www.google.com/maps/embed?pb=..." style="width: 100%; height: 200px; border: 0;" allowfullscreen=""></iframe>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Mega menú
+            $('.dropdown').hover(function() {
+                $(this).find('.dropdown-menu').slideDown(200);
+            }, function() {
+                $(this).find('.dropdown-menu').slideUp(200);
+            });
+
+            // Animar barras de habilidades
+           $('.progress-bar').each(function() {
+              var width = $(this).data('width'); // Obtiene el valor de data-width
+                    $(this).animate({
+                        width: width + '%' // Anima la barra al porcentaje indicado
+               }, 1000); // Duración de la animación en milisegundos
+            });
+
+            // Rating con estrellas
+            $('.star-rating input').on('change', function() {
+                var value = $(this).val();
+                console.log('Rating seleccionado: ' + value); // Para pruebas
+            });
+
+            $('.star-rating label').hover(function() {
+                $(this).prevAll('label').addBack().css('color', '#ff6200');
+            }, function() {
+                $(this).prevAll('label').addBack().css('color', '#ccc');
+                $('.star-rating input:checked').next('label').prevAll('label').addBack().css('color', '#ff6200');
+            });
+
+            // Formulario newsletter
+            $('#newsletterForm').on('submit', function(e) {
+                e.preventDefault();
+                if (this.checkValidity()) {
+                    $('.spinner-border').removeClass('d-none');
+                    setTimeout(function() {
+                        $('.spinner-border').addClass('d-none');
+                    }, 2000);
+                }
+                this.classList.add('was-validated');
+            });
+        });
+    </script>
 </body>
 </html>
