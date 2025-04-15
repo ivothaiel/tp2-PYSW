@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iron Claw - Contacto</title>
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+    <link rel="icon" href="./assets/fotos/index/pesa.png" type="image/png">
+    <style>
+    /* Estilo para el toggle */
+    .form-check-label {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #333;
+    }
+    .form-check-input {
+        transform: scale(1.5);
+        margin-right: 10px;
+    }
+
+    /* Estilo para la tabla */
+    table.table-hover {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    table.table-hover thead {
+        background-color: #343a40;
+        color: #fff;
+    }
+    table.table-hover tbody tr {
+        transition: background-color 0.3s ease;
+    }
+    table.table-hover tbody tr:hover {
+        background-color: #f8f9fa;
+    }
+    table.table-hover tbody tr.table-primary {
+        background-color: #cce5ff !important;
+    }
+    table.table-hover tbody td.table-secondary {
+        background-color: #e2e3e5 !important;
+    }
+
+    /* Estilo para tooltips */
+    .tooltip-inner {
+        background-color: #333;
+        color: #fff;
+        font-size: 0.9rem;
+        border-radius: 4px;
+    }
+    .tooltip-arrow {
+        color: #333;
+    }
+
+    /* Estilo para el footer */
+    footer h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    footer a {
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    footer a:hover {
+        color: #ffc107;
+    }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <div class="container">>
+            <a class="navbar-brand" href="index.html">
+                <img src="./assets/fotos/index/logo.png" alt="Logo de Iron Claw" class="img-fluid me-2" style="height: 40px;">
+                IRON CLAW
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+      <!-- Menú principal -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="clasesMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">Clases</a>
+                        <div class="dropdown-menu mega-menu p-3">
+                            <a class="dropdown-item" href="clases.html"><strong>Todas las Clases</strong></a>
+                            <div class="row">
+                                <div class="col">
+                                    <h5>Fuerza</h5>
+                                    <a class="dropdown-item" href="./clases/musculacion.html">Musculación</a>
+                                    <a class="dropdown-item" href="./clases/powerlifting.html">Powerlifting</a>
+                                </div>
+                                <div class="col">
+                                    <h5>Funcional</h5>
+                                    <a class="dropdown-item" href="./clases/crossfit.html">CrossFit</a>
+                                    <a class="dropdown-item" href="./clases/calistenia.html">Calistenia</a>
+                                </div>
+                                <div class="col">
+                                    <h5>Bienestar</h5>
+                                    <a class="dropdown-item" href="./clases/yoga.html">Yoga</a>
+                                    <a class="dropdown-item" href="./clases/pilates.html">Pilates</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+    
+                    <!-- Otros enlaces -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="entrenadores.html">Entrenadores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="precios.html">Planes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </ul>
+                </div>
+            </div>
+    </nav>
+    <!-- Fin del menú principal -->
+
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Planes y Precios</h1>
+        <!-- Toggle mensual/anual -->
+        <div class="text-center mb-4">
+            <div class="form-check form-switch d-inline-block">
+                <input class="form-check-input" type="checkbox" id="togglePrecios">
+                <label class="form-check-label" for="togglePrecios">Mostrar precios anuales</label>
+            </div>
+        </div>
+
+        <!-- Tabla de precios -->
+        <div class="table-responsive">
+            <table class="table table-hover text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col" data-bs-toggle="tooltip" title="Nombre del plan">Plan</th>
+                        <th scope="col" data-bs-toggle="tooltip" title="Acceso al gimnasio">Acceso</th>
+                        <th scope="col" data-bs-toggle="tooltip" title="Clases incluidas">Clases</th>
+                        <th scope="col" data-bs-toggle="tooltip" title="Precio mensual o anual">Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Básico</td>
+                        <td>Limitado</td>
+                        <td>2 por semana</td>
+                        <td class="precio" data-mensual="2000" data-anual="20000">$2000</td>
+                    </tr>
+                    <tr>
+                        <td>Intermedio</td>
+                        <td>Completo</td>
+                        <td>5 por semana</td>
+                        <td class="precio" data-mensual="4000" data-anual="40000">$4000</td>
+                    </tr>
+                    <tr>
+                        <td>Premium</td>
+                        <td>Completo</td>
+                        <td>Ilimitadas</td>
+                        <td class="precio" data-mensual="6000" data-anual="60000">$6000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Newsletter</h3>
+                    <form id="newsletterForm">
+                        <input type="email" class="form-control mb-2" placeholder="Tu email" required>
+                        <button type="submit" class="btn btn-primary">Suscribirse</button>
+                        <span class="spinner-border spinner-border-sm d-none"></span>
+                    </form>
+                </div>
+                <div class="col-md-4 text-center">
+                    <h3>Redes</h3>
+                    <a href="#" class="text-white d-block">Facebook</a>
+                    <a href="#" class="text-white d-block">Instagram</a>
+                    <a href="#" class="text-white d-block">Twitter</a>
+                </div>
+                <div class="col-md-4">
+                    <h3>Mapa</h3>
+                    <iframe src="https://www.google.com/maps/embed?pb=..." style="width: 100%; height: 200px; border: 0;" allowfullscreen=""></iframe>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Menú: aparece al pasar el mouse
+            $('.dropdown').hover(function() {
+                $(this).find('.dropdown-menu').slideDown(200);
+            }, function() {
+                $(this).find('.dropdown-menu').slideUp(200);
+            });
+
+            // Activar tooltips de Bootstrap
+            $('[data-bs-toggle="tooltip"]').tooltip();
+
+            // Toggle mensual/anual
+            $('#togglePrecios').on('change', function () {
+                const esAnual = $(this).is(':checked');
+                $('.precio').each(function () {
+                    const precio = esAnual ? $(this).data('anual') : $(this).data('mensual');
+                    $(this).text(`$${precio}`);
+                });
+            });
+
+            // Resaltar fila y columna al pasar el mouse
+            $('table.table-hover tbody tr').hover(function () {
+                $(this).addClass('table-primary').siblings().removeClass('table-primary');
+                const index = $(this).index();
+                $('table.table-hover tbody tr').each(function () {
+                    $(this).children().eq(index).addClass('table-secondary');
+                });
+            }, function () {
+                $(this).removeClass('table-primary');
+                $('table.table-hover tbody tr td').removeClass('table-secondary');
+            });
+
+            // Validación del formulario de Newsletter
+            $('#newsletterForm').on('submit', function(e) {
+                e.preventDefault();
+                const emailInput = $(this).find('input[type="email"]');
+                const spinner = $(this).find('.spinner-border');
+
+                if (emailInput.val() === '') {
+                    emailInput.addClass('is-invalid');
+                    return;
+                } else {
+                    emailInput.removeClass('is-invalid').addClass('is-valid');
+                }
+
+                // Mostrar spinner y simular envío
+                spinner.removeClass('d-none');
+                setTimeout(() => {
+                    spinner.addClass('d-none');
+                    alert('¡Gracias por suscribirte!');
+                    emailInput.removeClass('is-valid').val('');
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>
