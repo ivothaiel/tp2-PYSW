@@ -6,13 +6,19 @@
     <title>Iron Claw - Entrenadores</title>
     <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" href="./assets/fotos/index/pesa.png" type="image/png">
-    <!-- Estilo extra -->
+    <!-- Estilos extra -->
     <style>
+        /*importando una fuente de letra de google*/
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Boldonse&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Tektur:wght@400..900&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
+        *{
+            font-family: 'Bebas Neue', cursive;
+        }
         body {
-            background-color: #ff6200;
+            background-color: #dd7272;
             
         }
         .mega-menu { width: 500px; }
+
         /* Efecto flip para tarjetas */
         .flip-card {
             perspective: 1000px;
@@ -54,7 +60,7 @@
         .star-rating input:checked ~ label,
         .star-rating label:hover,
         .star-rating label:hover ~ label {
-            color: #ff6200;
+            color: #ffffff;
         }
         .star-rating input {
             display: none;
@@ -65,39 +71,24 @@
     <!-- Barra de navegación -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-        <!-- Este bloque es el corazón del menú: el logo y los enlaces. -->
-        <div class="container">
-            <!-- El "container" es como una caja que mantiene todo centrado y ordenado. -->
+        <div class="container">>
             <a class="navbar-brand" href="index.html">
                 <img src="./assets/fotos/index/logo.png" alt="Logo de Iron Claw" class="img-fluid me-2" style="height: 40px;">
                 IRON CLAW
             </a>
-    
-            <!-- Este es el nombre del gym, el que todos ven primero. El "navbar-brand" le da un estilo destacado, como si fuera el título principal. -->
-            <!-- Botón para móviles -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-    
-            <!-- Menú principal -->
+      <!-- Menú principal -->
             <div class="collapse navbar-collapse" id="navbarNav">
-                <!-- todos los enlaces del menú. El "collapse" hace que se esconda en móviles hasta que toques el botón. El id="navbarNav" es como el nombre de esta sección para que el botón de arriba sepa qué mostrar. -->
                 <ul class="navbar-nav ms-auto">
-                    <!-- La lista de enlaces. El "navbar-nav" los pone uno al lado del otro, y "ms-auto" los empuja a la derecha -->
-                    <!-- Enlace a Inicio -->
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
                     </li>
-                    <!-- Cada <li> es un enlace. Este es el de "Inicio". El "active" lo resalta para que sepas que estás en la página principal. El href="index.html" te lleva a la home. Si estás en otra página, sacale el "active". -->
-    
-                    <!-- Menú de Clases (mega menú) -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="clasesMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">Clases</a>
-                        <!-- Este es el enlace de "Clases". El "dropdown-toggle" dice que, al hacer clic (o pasar el mouse con jQuery), va a mostrar un submenú. El id="clasesMenu" es solo un nombre para identificarlo. -->
                         <div class="dropdown-menu mega-menu p-3">
-                            <!-- El "dropdown-menu" es el cuadro que aparece con más opciones, y "mega-menu" es una clase que le pusimos para hacerlo más grande. El "p-3" agrega un poco de espacio adentro para que no se vea apretado. -->
                             <div class="row">
-                                <!-- grilla ("row") para dividir el menú en columnas, como si fuera una tabla -->
                                 <div class="col">
                                     <h5>Fuerza</h5>
                                     <a class="dropdown-item" href="./clases/musculacion.html">Musculación</a>
@@ -113,7 +104,6 @@
                                     <a class="dropdown-item" href="./clases/yoga.html">Yoga</a>
                                     <a class="dropdown-item" href="./clases/pilates.html">Pilates</a>
                                 </div>
-                                <!-- Cada "col" es una columna con un título (h5) y enlaces. Los "dropdown-item" son los links que podés clicar.-->
                             </div>
                         </div>
                     </li>
@@ -131,10 +121,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="blog.html">Blog</a>
                     </li>
-                    <!-- Estos son los enlaces a las otras páginas. Cada uno es un <li> con un <a>. Los href apuntan a los archivos HTML de tu proyecto. Si querés agregar otra página, como "Sobre Nosotros", solo copiás un <li> y cambiás el nombre y el href. -->
-                </ul>
+                    </ul>
+                </div>
             </div>
-        </div>
+        
     </nav>
     
 
@@ -173,16 +163,16 @@
                                     </div>
                                 </div>
                                 <div class="star-rating d-flex justify-content-center">
-                                    <input type="radio" name="rating1" id="star2-5" value="5">
-                                    <label for="star2-5">★</label>
-                                    <input type="radio" name="rating2" id="star2-4" value="4">
-                                    <label for="star2-4">★</label>
-                                    <input type="radio" name="rating3" id="star2-3" value="3">
-                                    <label for="star2-3">★</label>
-                                    <input type="radio" name="rating4" id="star2-2" value="2">
-                                    <label for="star2-2">★</label>
-                                    <input type="radio" name="rating5" id="star2-1" value="1">
-                                    <label for="star2-1">★</label>
+                                    <input type="radio" name="rating1" id="rating1-star5" value="5">
+                                    <label for="rating1-star5">★</label>
+                                    <input type="radio" name="rating1" id="rating1-star4" value="4">
+                                    <label for="rating1-star4">★</label>
+                                    <input type="radio" name="rating1" id="rating1-star3" value="3">
+                                    <label for="rating1-star3">★</label>
+                                    <input type="radio" name="rating1" id="rating1-star2" value="2">
+                                    <label for="rating1-star2">★</label>
+                                    <input type="radio" name="rating1" id="rating1-star1" value="1">
+                                    <label for="rating1-star1">★</label>
                                 </div>
                             </div>
                         </div>
@@ -217,16 +207,16 @@
                                     </div>
                                 </div>
                                 <div class="star-rating d-flex justify-content-center">
-                                    <input type="radio" name="rating2" id="star2-5" value="5">
-                                    <label for="star2-5">★</label>
-                                    <input type="radio" name="rating2" id="star2-4" value="4">
-                                    <label for="star2-4">★</label>
-                                    <input type="radio" name="rating2" id="star2-3" value="3">
-                                    <label for="star2-3">★</label>
-                                    <input type="radio" name="rating2" id="star2-2" value="2">
-                                    <label for="star2-2">★</label>
-                                    <input type="radio" name="rating2" id="star2-1" value="1">
-                                    <label for="star2-1">★</label>
+                                    <input type="radio" name="rating2" id="rating2-star5" value="5">
+                                    <label for="rating2-star5">★</label>
+                                    <input type="radio" name="rating2" id="rating2-star4" value="4">
+                                    <label for="rating2-star4">★</label>
+                                    <input type="radio" name="rating2" id="rating2-star3" value="3">
+                                    <label for="rating2-star3">★</label>
+                                    <input type="radio" name="rating2" id="rating2-star2" value="2">
+                                    <label for="rating2-star2">★</label>
+                                    <input type="radio" name="rating2" id="rating2-star1" value="1">
+                                    <label for="rating2-star1">★</label>
                                 </div>
                             </div>
                         </div>
@@ -261,16 +251,16 @@
                                     </div>
                                 </div>
                                 <div class="star-rating d-flex justify-content-center">
-                                    <input type="radio" name="rating2" id="star2-5" value="5">
-                                    <label for="star2-5">★</label>
-                                    <input type="radio" name="rating2" id="star2-4" value="4">
-                                    <label for="star2-4">★</label>
-                                    <input type="radio" name="rating2" id="star2-3" value="3">
-                                    <label for="star2-3">★</label>
-                                    <input type="radio" name="rating2" id="star2-2" value="2">
-                                    <label for="star2-2">★</label>
-                                    <input type="radio" name="rating2" id="star2-1" value="1">
-                                    <label for="star2-1">★</label>
+                                    <input type="radio" name="rating3" id="rating3-star5" value="5">
+                                    <label for="rating3-star5">★</label>
+                                    <input type="radio" name="rating3" id="rating3-star4" value="4">
+                                    <label for="rating3-star4">★</label>
+                                    <input type="radio" name="rating3" id="rating3-star3" value="3">
+                                    <label for="rating3-star3">★</label>
+                                    <input type="radio" name="rating3" id="rating3-star2" value="2">
+                                    <label for="rating3-star2">★</label>
+                                    <input type="radio" name="rating3" id="rating3-star1" value="1">
+                                    <label for="rating3-star1">★</label>
                                 </div>
                             </div>
                         </div>
@@ -293,28 +283,28 @@
                                 <h5>Maria Marchesi</h5>
                                 <p>Experta en entrenamientos de fuerza y flexibilidad.</p>
                                 <div class="mb-3">
-                                    <label>Intensidad</label>
+                                    <label>Flexibilidad</label>
                                     <div class="progress">
                                         <div class="progress-bar bg-success" role="progressbar" style="width: 0%;" data-width="80"></div>
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <label>Agilidad</label>
+                                    <label>Resistencia</label>
                                     <div class="progress">
                                         <div class="progress-bar bg-info" role="progressbar" style="width: 0%;" data-width="90"></div>
                                     </div>
                                 </div>
                                 <div class="star-rating d-flex justify-content-center">
-                                    <input type="radio" name="rating2" id="star2-5" value="5">
-                                    <label for="star2-5">★</label>
-                                    <input type="radio" name="rating2" id="star2-4" value="4">
-                                    <label for="star2-4">★</label>
-                                    <input type="radio" name="rating2" id="star2-3" value="3">
-                                    <label for="star2-3">★</label>
-                                    <input type="radio" name="rating2" id="star2-2" value="2">
-                                    <label for="star2-2">★</label>
-                                    <input type="radio" name="rating2" id="star2-1" value="1">
-                                    <label for="star2-1">★</label>
+                                    <input type="radio" name="rating4" id="rating4-star5" value="5">
+                                    <label for="rating4-star5">★</label>
+                                    <input type="radio" name="rating4" id="rating4-star4" value="4">
+                                    <label for="rating4-star4">★</label>
+                                    <input type="radio" name="rating4" id="rating4-star3" value="3">
+                                    <label for="rating4-star3">★</label>
+                                    <input type="radio" name="rating4" id="rating4-star2" value="2">
+                                    <label for="rating4-star2">★</label>
+                                    <input type="radio" name="rating4" id="rating4-star1" value="1">
+                                    <label for="rating4-star1">★</label>
                                 </div>
                             </div>
                         </div>
@@ -343,22 +333,22 @@
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <label>Agilidad</label>
+                                    <label>Resistencia</label>
                                     <div class="progress">
                                         <div class="progress-bar bg-info" role="progressbar" style="width: 0%;" data-width="90"></div>
                                     </div>
                                 </div>
                                 <div class="star-rating d-flex justify-content-center">
-                                    <input type="radio" name="rating2" id="star2-5" value="5">
-                                    <label for="star2-5">★</label>
-                                    <input type="radio" name="rating2" id="star2-4" value="4">
-                                    <label for="star2-4">★</label>
-                                    <input type="radio" name="rating2" id="star2-3" value="3">
-                                    <label for="star2-3">★</label>
-                                    <input type="radio" name="rating2" id="star2-2" value="2">
-                                    <label for="star2-2">★</label>
-                                    <input type="radio" name="rating2" id="star2-1" value="1">
-                                    <label for="star2-1">★</label>
+                                    <input type="radio" name="rating6" id="rating6-star5" value="5">
+                                    <label for="rating6-star5">★</label>
+                                    <input type="radio" name="rating6" id="rating6-star4" value="4">
+                                    <label for="rating6-star4">★</label>
+                                    <input type="radio" name="rating6" id="rating6-star3" value="3">
+                                    <label for="rating6-star3">★</label>
+                                    <input type="radio" name="rating6" id="rating6-star2" value="2">
+                                    <label for="rating6-star2">★</label>
+                                    <input type="radio" name="rating6" id="rating6-star1" value="1">
+                                    <label for="rating6-star1">★</label>
                                 </div>
                             </div>
                         </div>
@@ -370,18 +360,18 @@
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
                                 <div class="card">
-                                    <img src="./assets/fotos/entrenadores/calistenia.jpg" class="card-img-top" alt="Entrenador 6">
+                                    <img src="./assets/fotos/entrenadores/calistenia-entrenadorDEF.jpg" class="card-img-top" alt="Entrenador 6">
                                     <div class="card-body text-center">
-                                        <h5 class="card-title">Martina Gimenez</h5>
+                                        <h5 class="card-title">Li Sun</h5>
                                         <p class="card-text">Especialista en Calistenia</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="flip-card-back">
-                                <h5>Martina Gimenez</h5>
-                                <p>Experta en entrenamientos de fuerza y resistencia corporal.</p>
+                                <h5>Li Sun</h5>
+                                <p>Experto en entrenamientos de fuerza y resistencia corporal.</p>
                                 <div class="mb-3">
-                                    <label>Intensidad</label>
+                                    <label>Disciplina</label>
                                     <div class="progress">
                                         <div class="progress-bar bg-success" role="progressbar" style="width: 0%;" data-width="80"></div>
                                     </div>
@@ -393,15 +383,15 @@
                                     </div>
                                 </div>
                                 <div class="star-rating d-flex justify-content-center">
-                                    <input type="radio" name="rating2" id="star2-5" value="5">
+                                    <input type="radio" name="rating6" id="star2-5" value="5">
                                     <label for="star2-5">★</label>
-                                    <input type="radio" name="rating2" id="star2-4" value="4">
+                                    <input type="radio" name="rating6" id="star2-4" value="4">
                                     <label for="star2-4">★</label>
-                                    <input type="radio" name="rating2" id="star2-3" value="3">
+                                    <input type="radio" name="rating6" id="star2-3" value="3">
                                     <label for="star2-3">★</label>
-                                    <input type="radio" name="rating2" id="star2-2" value="2">
+                                    <input type="radio" name="rating6" id="star2-2" value="2">
                                     <label for="star2-2">★</label>
-                                    <input type="radio" name="rating2" id="star2-1" value="1">
+                                    <input type="radio" name="rating6" id="star2-1" value="1">
                                     <label for="star2-1">★</label>
                                 </div>
                             </div>
@@ -420,7 +410,7 @@
                     <h3>Newsletter</h3>
                     <form id="newsletterForm">
                         <input type="email" class="form-control mb-2" placeholder="Tu email" required>
-                        <button type="submit" class="btn btn-primary">Suscribirse</button>
+                        <button type="submit" class="btn btn-danger">Suscribirse</button>
                         <span class="spinner-border spinner-border-sm d-none"></span>
                     </form>
                 </div>
@@ -428,6 +418,7 @@
                     <h3>Redes</h3>
                     <a href="#" class="text-white d-block">Facebook</a>
                     <a href="#" class="text-white d-block">Instagram</a>
+                    <a href="#" class="text-white d-block">Twitter</a>
                 </div>
                 <div class="col-md-4">
                     <h3>Mapa</h3>
@@ -457,20 +448,34 @@
                }, 1000); // Duración de la animación en milisegundos
             });
 
-            // Rating con estrellas
-            $('.star-rating input').on('change', function() {
-                var value = $(this).val();
-                console.log('Rating seleccionado: ' + value); // Para pruebas
-            });
+             // Evento para manejar el hover dinámico de las estrellas
+             $('.star-rating label').hover(
+        function () {
+            $(this).prevAll('label').addBack().css('color', '#ff6200');
+        },
+        function () {
+            $(this).prevAll('label').addBack().css('color', '#ccc');
+            $(this)
+                .closest('.star-rating')
+                .find('input:checked')
+                .prevAll('label')
+                .addBack()
+                .css('color', '#ff6200');
+        }
+    );
 
-            $('.star-rating label').hover(function() {
-                $(this).prevAll('label').addBack().css('color', '#ff6200');
-            }, function() {
-                $(this).prevAll('label').addBack().css('color', '#ccc');
-                $('.star-rating input:checked').next('label').prevAll('label').addBack().css('color', '#ff6200');
-            });
-
-            // Formulario newsletter
+    $('.star-rating input').on('change', function () {
+        $(this)
+            .closest('.star-rating')
+            .find('label')
+            .css('color', '#ccc');
+        $(this)
+            .closest('.star-rating')
+            .find('input:checked')
+            .prevAll('label')
+            .addBack()
+            .css('color', '#ff6200');
+    });
             $('#newsletterForm').on('submit', function(e) {
                 e.preventDefault();
                 if (this.checkValidity()) {
